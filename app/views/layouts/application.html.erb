@@ -9,10 +9,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+    screens: {
+      'md': '860px',
+      }
+     }
+    }
+    </script>
   </head>
 
   <body>
-    <div class="max-w-4xl m-auto">
+    <div class="w-screen md:flex md:flex-col md:items-center">
       <%= yield %>
     </div>
   </body>

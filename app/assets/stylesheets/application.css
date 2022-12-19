@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+body, html{
+    font-family: 'Poppins', sans-serif; 
+}
+input[type = date],
+input[type = text],
+select{
+    background-color: #e8e9ec;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 4px 0px;
+}
+
+input[type = submit], 
+.button{
+    background: rgb(47, 127, 255);
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 3px 15px;
+    margin: 3px;
+}
+
+input[type = submit]:hover, 
+.button:hover{
+    background: rgb(57, 166, 255);
+}
