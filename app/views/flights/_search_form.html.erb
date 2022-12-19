@@ -1,0 +1,27 @@
+<div class="mb-4">
+    <%= form_with url: "/flights", method: :get, :html => {:class => 'flex-none md:flex items-center gap-2'}, remote: true do |f| %>
+        <div class="flex flex-col md:flex-row gap-1">
+            <%= f.label :from_id, "From" %>
+            <%= f.select(:from_id, options_for_select(@airports)) %>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-1">
+            <%= f.label :to_id, "To" %>
+            <%= f.select(:to_id, options_for_select(@airports)) %>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-1">
+            <%= f.label :passenger_count, "Passengers" %>
+            <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
+        </div>
+
+        <div class="flex flex-col gap-1 md:flex-row md:items-center">
+            <%= f.label :date, "Date" %>
+            <%= f.date_field :date %>
+        </div>
+        
+        <div class='flex justify-center mt-3 md:mt-0'>
+            <%= f.submit "Search" %>
+        </div>
+    <% end %>
+</div>
