@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# Airport.create(code: 'ATL', location: 'Atlanta, Georgia')
-# Airport.create(code: 'ORF', location: 'Norfolk, Virginia')
+Airport.create(code: 'ATL', location: 'Atlanta, Georgia')
+Airport.create(code: 'ORF', location: 'Norfolk, Virginia')
 
-# today = Date.today.strftime('%Y-%m-%d')
-# month_later = (Date.today + 31).strftime('%Y-%m-%d')
+today = Date.today.strftime('%Y-%m-%d')
+tomorow = (Date.today + 1).strftime('%Y-%m-%d')
 
-# (today..month_later).to_a.each do |d|
-#   ['8:00AM', '12:00PM', '6:00PM'].each do |t|
-#     Flight.create(departure_airport_id: 1, arrival_airport_id: 2, datetime: "#{d} #{t}")
-#     Flight.create(departure_airport_id: 2, arrival_airport_id: 1, datetime: "#{d} #{t}")
-#   end
-# end
+(today..tomorow).to_a.each do |d|
+  ['8:00AM', '12:00PM', '6:00PM'].each do |t|
+    Flight.create(from_id: 1, to_id: 2, date: d, time: t)
+    Flight.create(from_id: 2, to_id: 1, date: d, time: t)
+  end
+end
