@@ -1,0 +1,5 @@
+<div class="text-xl">
+    <%= "#{@flight.date.strftime("%B %d %Y")}, " %>
+    <%= @flight.time.strftime('%I:%M %p') %>
+    <%= "| #{@flight.from.code} - #{@flight.to.code}" %>
+</div>
