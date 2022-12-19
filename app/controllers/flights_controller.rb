@@ -1,6 +1,7 @@
 class FlightsController < ApplicationController
   def index
     @airports = Airport.all.map { |a| ["#{a.code}, #{a.location}", a.id] }
+    @dates = Flight.all.map(&:date).uniq
     return if search_params.empty?
 
     @search_results = Flight.search(search_params)
