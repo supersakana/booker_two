@@ -1,18 +1,18 @@
 databases:
-  - name: bookertwo
-    databaseName: bookertwo
-    user: bookertwo
+  - name: booker_two
+    databaseName: booker_two
+    user: booker_two
 
 services:
   - type: web
-    name: bookertwo
+    name: booker_two
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: bookertwo
+          name: booker_two
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
