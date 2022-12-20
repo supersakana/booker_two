@@ -21,6 +21,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/flash' unless flash.nil? %>
     <div class="w-screen md:flex md:flex-col md:items-center">
       <%= yield %>
     </div>
