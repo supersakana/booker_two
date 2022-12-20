@@ -16,7 +16,6 @@ class BookingsController < ApplicationController
       redirect_to @booking
     else
       render :new, status: :unprocessable_entity
-      render json: @booking.errors, status: :unprocessable_entity
     end
   end
 
