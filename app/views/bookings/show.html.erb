@@ -1,0 +1,24 @@
+<div class="flex flex-col justify-center items-center gap-y-8 h-screen mx-3">
+    <h1 class="text-5xl mb-4 font-bold">Your flight is booked!</h1>
+    <div class="flex flex-col gap-8 md:flex-row">
+        <div class="flex flex-col">
+            <h3 class="text-2xl underline text-center mb-4">Flight</h3>
+            <ul class="flex flex-col gap-y-4">
+                <li><%= "From: #{@booking.flight.from.code}, #{@booking.flight.from.location}" %></li>
+                <li><%="To: #{@booking.flight.to.code}, #{@booking.flight.to.location}" %></li>
+                <li><%="Date: #{@booking.flight.date.strftime("%B %d %Y")}" %></li>
+                <li><%="Time: #{@booking.flight.time.strftime('%I:%M %p')}" %></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col">
+            <h3 class="text-2xl underline text-center mb-4">Passengers</h3>
+            <ul class="flex flex-col gap-y-4">
+            <% @booking.passengers.each do |passenger| %>
+                <li><%= "Name: #{passenger.name} Email: #{passenger.email}" %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+     <%= link_to 'Book another flight', root_path, class: 'button' %>
+</div>
