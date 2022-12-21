@@ -24,14 +24,14 @@ RSpec.describe 'FlightSearches', type: :system do
   end
 
   scenario 'departure and arrival airport are the same' do
-    # visit '/'
-    # select('ORF Norfolk, Virginia', from: 'departure_airport_id')
-    # select('ORF Norfolk, Virginia', from: 'arrival_airport_id')
-    # select('2', from: 'passenger_count')
-    # fill_in('date', with: Date.tomorrow)
-    # click_on 'Search'
+    visit '/'
+    select('ORF, Norfolk, Virginia', from: 'from_id')
+    select('ORF, Norfolk, Virginia', from: 'to_id')
+    select('2', from: 'passenger_count')
+    select(Date.tomorrow, from: 'date')
+    click_on 'Search'
 
-    # expect(page).to have_content('Search for flight...')
-    # expect(page).to have_content('departure and arrival flights should be different')
+    expect(page).to have_content('Search for flight...')
+    expect(page).to have_content('departure and arrival flights should be different')
   end
 end
