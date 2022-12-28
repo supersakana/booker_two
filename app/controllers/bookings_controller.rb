@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
       flash[:notice] = 'Booking successfully completed!'
       redirect_to @booking
     else
-      render :new, status: :unprocessable_entity
+      redirect_to request.referrer
     end
   end
 
